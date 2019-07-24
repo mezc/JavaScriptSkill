@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+    <h1>link</h1>
+    <a href="http://www.qq.com">tencent</a>
+    <a href="http://www.taobao.com" target="_blank">taibao</a>
+  </section>
+  <section>
+    <h1>table</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>data1</td>
+          <td>data2</td>
+          <td>data3</td>
+        </tr>
+        <tr>
+          <td colspan="2">第二行占据两列单元格</td>
+          <td>2行3列</td>
+        </tr>
+        <tr>
+          <td rowspan="2">第三，四行占据两行单元格</td>
+          <td>2行2列</td>
+          <td>2行3列</td>
+        </tr>
+        <tr>
+          <td>3行2列</td>
+          <td>3行3列</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+  <section>
+    <h1>表单</h1>
+    <form method="GET" action="http://www.qq.com">
+      <p>
+        <select name="下拉框" id="">
+          <option value="">1</option>
+          <option value="" selected>2</option>
+        </select>
+      </p>
+      <p>
+        <input type="text" placeholder="text">
+        <input type="password" placeholder="password">
+        <input type="radio" placeholder="radio单选框" name="text1" id="text1">
+        <label for="text1">radio单选框1</label>
+        <input type="radio" placeholder="radio单选框" name="text2">
+        <label for="text2">radio单选框2</label>
+        <input type="checkbox" placeholder="checkbox复选框">checkbox复选框1
+        <input type="checkbox" placeholder="checkbox复选框">checkbox复选框2
+      </p>
+      <p>
+        <!-- submit/reset只在form中起作用 -->
+        <button type="button">普通按钮</button>
+        <!-- submit 触发form actions -->
+        <button type="submit">提交按钮</button>
+        <button type="reset">重置按钮</button>
+        <!-- submit用input写 -->
+        <input type="submit">
+        <!-- reset用input写 -->
+        <input type="reset">
+      </p>
+    </form>
+  </section>
+</body>
+</html>
