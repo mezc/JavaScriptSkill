@@ -516,6 +516,7 @@ git branch --set-upstream-to origin/远程分支名  本地分支名
 
 27.2.4切换分支
 git checkout 本地分支名
+
 27.2.5合并分支
 git merge 本地分支名称
 -------------------
@@ -1549,18 +1550,104 @@ Vue中使用fontawesome:
           写到元素属性上的style比写在<style>中的style优先级高
           相同权重 后写的生效
     2.3 非布局样式 
-        2.3.1 字体
+        2.3.1 字体:
             自定义字体
-        2.3.2 行高
-            > 行高由line-box决定，line box 由inline box决定，inline box的高度会决定行高的高度；line-height会撑起line-box的高度，但不会引起自身高度的变化。
+        2.3.2 行高:
+            > line-height 行高由line-box决定，line box 由inline box决定，inline box的高度会决定行高的高度；line-height会撑起line-box的高度，但不会引起自身高度的变化。
             > line-height: 默认垂直居中
-            > 默认按底线对其，垂直居中 vertical-align: middle
+            > 默认按底线对其，垂直居中 vertical-align: middle/top/bottom(按底线对齐,消除图片的底部缝隙)
             > 图片3px空隙问题：<img>按基线对齐，基线到底线还有段空隙，解决方式：vertical-align:padding-bottom,按底线对齐。
-        2.3.3 背景
+        2.3.3 背景:
+            >background
+                >背景颜色：
+                    >rgb: #FF0000
+                    >rgb:rgb(255, 0, 0)
+                    >rgba:rgba(255, 0, 0, .3)
+                    >hsl:(色相，饱和度，亮度, 透明度)
+                    >背景图: background: url(./test.png)
+                > 线性渐变/多背景叠加：
+                    >background: linear-gradient(to right, red, green) //从左到右
+                    >background: linear-gradient(135deg, red 0, green 50%, blue 100%); /*角度，num%表示相对位置*/
+                    >background: linear-gradient(135deg, transparent 0, transparent 50%, red 50%, red 50.5%, transparent 50.5%, transparent 100%),linear-gradient(45deg, transparent 0, transparent 50%, green 50%, green 50.5%, transparent 50.5%,transparent 100%);//transparent表该处透明
+                     background-size: 5px 5px;
+                >背景图片和属性
+                    > height: 900px;
+                      background: pink url(./test.png);
+                      background-repeat: no-repeat;/*repeat平铺，repeat-y纵向平铺，repeat-x横向平铺,no-repeat*/
+                      /* background-position: center ;center top,center bottom, center center */
+                      background-position: 200px 30px;/*左，上*/
+                      background-size: 100px 50px;/*设置图片大小
+
         2.3.4 边框
+            >边框的属性
+                >线型
+                >大小
+                >颜色
+            >边框背景图
+            >边框衔接
+            >
+                .c1 {
+                  /* 边框 */
+                  width: 400px;
+                  height: 200px;
+                  /* border: 1px solid red; */
+                  border: 5px dotted red;
+                  border-bottom-color: green
+                  /* border: 5px dashed red; */
+                }
+                .c2 {
+                  /* 图片填充 */
+                  margin-top: 2px;
+                  width:400px;
+                  height:200px;
+                  /* border-width:30px; */
+                  border:30px solid transparent;
+                  border-image: url(./border.png) 30 round;
+                }
+                .c3 {
+                  /* 三角形 */
+                  width: 0px;
+                  height: 200px;
+                  border-bottom: 30px solid red;
+                  border-right: 30px solid blue;
+                  border-right: 30px solid transparent;
+                  border-left: 30px solid transparent;
+                }
+
         2.3.5 滚动
+            > visible:滚动条隐藏,超出文本框的部分显示
+            > hidden:超出文本框的部分隐藏
+            > scroll：一直显示滚动条，超出文本框的不跟隐藏
+            > auto：超出文本框时才显示滚动条，超出文本框的部分隐藏
+            overflow: hidden
         2.3.6 文本折行
+            > overflow-wrap:是否保留单词
+                >overflow-wrap:normal //保留单词
+                >overflow-wrap:break-word //打断单词，但尽量保证单词的完整性。
+            > word-break:针对多字节文字，以字母为单位让单词换行，或者以单词为单位，不让单词换行。中文句子也是一个单词。
+                >word-break:break-all //打断单词，不保存单词的完整性
+                >word-break:keep-all //
+            >white-space 空白处是否断行
+                >white-space:no-wrap //不换行
+                >white-space:normal //换行
+
         2.3.7 装饰性属性
+            >字重font-weight
+                {
+                    font-weight: normal;
+                    font-weight: bold;
+                    font-weight: bolder;
+                    font-weight: lighter;
+                    font-weight: 100;//该值只能取100-900，100的整数倍
+                }
+            >斜体 font-style:italic
+            >下划线 text-decoration
+            >指针 cursor
+        2.3.8 hack:在一部分浏览器上生效的css写法。
 
-
-
+3.css布局：
+    3.1table表格布局
+    3.2float浮动+margin
+    3.3inline-block布局
+    3.4flexbox布局
+||vscode打开默认浏览器快捷键：alt+b||
